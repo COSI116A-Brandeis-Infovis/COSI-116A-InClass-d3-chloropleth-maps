@@ -304,3 +304,7 @@ __After this step, your map should look like this:__
 [![](tutorial/11/screenshot.png)](http://maptime-ams.github.io/animated-borders-d3js/tutorial/11)
 
 You're done!  Great job!
+
+## Step 6: Challenge
+
+If you look in the `data` folder, we actually have state boundaries from many different years.  Try to add a slider to the page that allows for navigation through different years.  We'll leave this open ended, and not expect you to finish it within the class time, but it's a good example of a useful interaction.
