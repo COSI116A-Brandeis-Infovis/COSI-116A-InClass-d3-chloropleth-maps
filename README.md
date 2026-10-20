@@ -119,7 +119,7 @@ var projection = d3.geoAlbersUsa(); // (2)
 var path = d3.geoPath()
     .projection(projection);  // (3)
 
-d3.json("data/1790.json").then(function(topologies) {  // (4)
+d3.json("data/states.json").then(function(topologies) {  // (4)
 
   var state = topojson.feature(topologies[0], topologies[0].objects.stdin);  // (5)
 
@@ -136,7 +136,7 @@ Explanation of individual JavaScript lines:
 1. Use D3 to select the SVG [group](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g) with id `#states`.
 2. D3 has some map projections built-in. We'll use [Albers USA projection](https://d3js.org/d3-geo/conic#geoAlbersUsa), but feel free to experiment with [some of the others](https://d3js.org/d3-geo/projection)!
 3. See http://bost.ocks.org/mike/map/ for more information!
-4. Load `1790.json` (a JSON array containing the U.S. states in 1790). `d3.json` returns a Promise, and the function we pass to `then` runs once the file has loaded.
+4. Load `states.json` (JSON array containing 13 decades of U.S. states). `d3.json` returns a Promise, and the function we pass to `then` runs once the file has loaded.
 5. `topojson.feature` will convert a TopoJSON object to a GeoJSON object. We'll start with just the first element in the TopoJSON array (`topologies[0]` = year 1790). I've used the TopoJSON command line utility to convert NHGIS's Shapefiles to TopoJSON, this is why the objects in the JSON file are inside an object called `stdin`...
 6. See http://bost.ocks.org/mike/map/ for more information!
 
